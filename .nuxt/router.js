@@ -3,8 +3,8 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
-const _401f29e4 = () => import('../pages/watch.vue' /* webpackChunkName: "pages/watch" */).then(m => m.default || m)
-const _20b7d467 = () => import('../pages/index.vue' /* webpackChunkName: "pages/index" */).then(m => m.default || m)
+const _9e998216 = () => import('../pages/watch.vue' /* webpackChunkName: "pages/watch" */).then(m => m.default || m)
+const _dd682d10 = () => import('../pages/index.vue' /* webpackChunkName: "pages/index" */).then(m => m.default || m)
 
 
 
@@ -59,19 +59,19 @@ const scrollBehavior = function (to, from, savedPosition) {
 export function createRouter () {
   return new Router({
     mode: 'history',
-    base: '/',
+    base: '/<repository-name>/',
     linkActiveClass: 'nuxt-link-active',
     linkExactActiveClass: 'nuxt-link-exact-active',
     scrollBehavior,
     routes: [
 		{
 			path: "/watch",
-			component: _401f29e4,
+			component: _9e998216,
 			name: "watch"
 		},
 		{
 			path: "/",
-			component: _20b7d467,
+			component: _dd682d10,
 			name: "index"
 		}
     ],

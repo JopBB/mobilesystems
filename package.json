@@ -9,7 +9,8 @@
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
-    "start": "nuxt start"
+    "start": "nuxt start",
+    "generate": "nuxt generate"
   },
   "author": "JopBB",
   "license": "MIT"
