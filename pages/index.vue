@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>Welcome!</h1>
-    <nuxt-link to="/watch">Watch page with a little addition</nuxt-link>
+    <nuxt-link to="./watch">Watch page with a little addition</nuxt-link>
   </div>
 </template>
 
