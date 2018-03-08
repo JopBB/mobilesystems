@@ -1,20 +1,20 @@
 {
-  "publicPath": "/_nuxt/",
+  "publicPath": "/mobilesystems/_nuxt/",
   "all": [
     "pages/watch.1c7f4bab5a8175cf663d.js",
     "pages/index.efe90ef7bf2ebbb799c7.js",
     "layouts/default.860485f7694926d31a51.js",
     "vendor.82c8d5f6e82358296f84.js",
-    "app.ef6e789ebe1d04c7976d.js",
-    "manifest.4a886ed52cef34beeb2d.js",
+    "app.676035a6f009831857fd.js",
+    "manifest.2ae1627db45a9dcbe10a.js",
     "LICENSES",
     "index.spa.html",
     "index.ssr.html"
   ],
   "initial": [
-    "manifest.4a886ed52cef34beeb2d.js",
+    "manifest.2ae1627db45a9dcbe10a.js",
     "vendor.82c8d5f6e82358296f84.js",
-    "app.ef6e789ebe1d04c7976d.js"
+    "app.676035a6f009831857fd.js"
   ],
   "async": [
     "pages/watch.1c7f4bab5a8175cf663d.js",
