@@ -1,9 +1,15 @@
-const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
-  router: {
-    base: '/mobilesystems/'
-  }
-} : {}
+// const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
+//   router: {
+//     base: '/mobilesystems/'
+//   }
+// } : {}
+
+// module.exports = {
+//   ...routerBase
+// }
 
 module.exports = {
-  ...routerBase
+  router: {
+    base: '/<repository-name>/'
+  }
 }

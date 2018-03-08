@@ -22,8 +22,8 @@ const createNext = ssrContext => opts => {
   }
   opts.query = stringify(opts.query)
   opts.path = opts.path + (opts.query ? '?' + opts.query : '')
-  if (opts.path.indexOf('http') !== 0 && ('/mobilesystems/' !== '/' && opts.path.indexOf('/mobilesystems/') !== 0)) {
-    opts.path = urlJoin('/mobilesystems/', opts.path)
+  if (opts.path.indexOf('http') !== 0 && ('/<repository-name>/' !== '/' && opts.path.indexOf('/<repository-name>/') !== 0)) {
+    opts.path = urlJoin('/<repository-name>/', opts.path)
   }
   // Avoid loop redirect
   if (opts.path === ssrContext.url) {

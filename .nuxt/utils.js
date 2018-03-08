@@ -119,7 +119,7 @@ export async function setContext(app, context) {
       
       payload: context.payload,
       error: context.error,
-      base: '/mobilesystems/',
+      base: '/<repository-name>/',
       env: {}
     }
     // Only set once
