@@ -1,5 +1,5 @@
 module.exports = {
   router: {
-    base: '/<repository-name>/'
+    base: '/mobilesystems/'
   }
 }
