@@ -8,8 +8,9 @@
 //   ...routerBase
 // }
 
-// module.exports = {
-//   router: {
-//     base: '/mobilesystems/'
-//   }
-// }
+module.exports = {
+  generate:{
+  	dir: 'docs'
+  }
+}
+
