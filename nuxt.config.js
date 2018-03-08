@@ -10,6 +10,6 @@
 
 module.exports = {
   router: {
-    base: 'mobilesystems'
+    base: '/mobilesystems/'
   }
 }
