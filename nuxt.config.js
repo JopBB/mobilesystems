@@ -9,6 +9,9 @@
 // }
 
 module.exports = {
+  router: {
+    base: '/mobilesystems/'
+  },
   generate:{
   	dir: 'docs'
   }
