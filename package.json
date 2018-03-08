@@ -1,0 +1,16 @@
+{
+  "name": "nuxttest",
+  "version": "1.0.0",
+  "description": "testing nuxt",
+  "main": "index.js",
+  "dependencies": {
+    "nuxt": "latest"
+  },
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start"
+  },
+  "author": "JopBB",
+  "license": "MIT"
+}
