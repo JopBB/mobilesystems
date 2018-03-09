@@ -1,4 +1,4 @@
-<style type="text/css">
+<style>
 	body{
 		background-image: url('/mapBackground.png');
 		background-size: 100%;
@@ -23,24 +23,49 @@
 		height: 100%;
 	}
 
+	#actionButtons{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		height:15%;
+		width: 100%;
+		position: absolute;
+		bottom: 8%;
+	}
+
+	.actionButton{
+		height:80%;
+	}
+	.actionButton img{
+		height: 100%;
+	}
+
 </style>
 
 
 <template>
   <div>
+  	<div id="actionButtons">
+  		<div class="actionButton">
+  			<img src="dangerButton.png">
+  		</div>
+  		<div class="actionButton">
+  			<img src="carButton.png">
+  		</div>
+  	</div>
 
     <div id="botBar">
     	<div class="botIcon" id="deleteAllIcon">
     		<img src="deleteAllButton.png">
     	</div>
     	<div class="botIcon" id="mapIcon">
-    		<img src="mapButton.png">
+    		<img src="mapButtonActive.png">
     	</div>
     	<div class="botIcon" id="addPersonIcon">
 			<img src="addPersonButton.png">
     	</div>
     	<div class="botIcon" id="chatIcon">
-    		<img src="chatButton.png">
+    		<nuxt-link to="/chat"><img src="chatButton.png"></nuxt-link>
     	</div>
     </div>
   </div>
