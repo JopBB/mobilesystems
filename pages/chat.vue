@@ -1,7 +1,5 @@
 <style>
-	body{
-	}
-
+	
 	#botBar{
 		width:100%;
 		height:8%;
@@ -33,12 +31,12 @@
 	.message{
 		width:90%;
 		background-color: #424242;
-		height:200px;
-		box-shadow: 0 10px;
-		border-radius:15px;
+		height:70px;
+		box-shadow: 0 3px;
+		border-radius:5px;
 		display: flex;
 		align-items: center;
-		margin-top:50px;
+		margin-top:20px;
 	}
 
 	.messageImageWrapper{
@@ -57,7 +55,7 @@
 	.messageText{
 		flex-grow: 3;
 		color:white;
-		font-size: 28pt;
+		font-size: 12pt;
 		text-align: center;
 		margin: auto;
 	}
@@ -120,7 +118,7 @@
 
 
 <script>
-import swal from 'sweetalert';
+import swal from 'sweetalert2';
 
 
 export default {
@@ -130,21 +128,22 @@ export default {
   methods: {
   	confirmDelete: function(){
   		swal({
-		  title: "Are you sure?",
-		  text: "Once deleted, you will not be able to recover this anything of this burglary-project!",
-		  icon: "warning",
-		  buttons: true,
-		  dangerMode: true,
-		})
-		.then((willDelete) => {
-		  if (willDelete) {
-		    swal("Poof! Your whole project has been deleted!", {
-		      icon: "success",
-		    });
-		  } else {
-		    swal("Your project is not deleted, you can continue!");
+		  title: 'Are you sure?',
+		  text: "You won't be able to revert this!",
+		  type: 'warning',
+		  showCancelButton: true,
+		  confirmButtonColor: '#3085d6',
+		  cancelButtonColor: '#d33',
+		  confirmButtonText: 'Yes, delete it!'
+		}).then((result) => {
+		  if (result.value) {
+		    swal(
+		      'Deleted!',
+		      'Your file has been deleted.',
+		      'success'
+		    )
 		  }
-		});
+		})
   	}
   }
 }
