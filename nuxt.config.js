@@ -12,6 +12,9 @@ const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
 	}
 
 module.exports = {
-  ...routerBase
+  ...routerBase,
+  modules: [
+	'bootstrap-vue/nuxt'
+  ]
 
 }

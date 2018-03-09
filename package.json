@@ -4,6 +4,7 @@
   "description": "testing nuxt",
   "main": "index.js",
   "dependencies": {
+    "bootstrap-vue": "^2.0.0-rc.2",
     "nuxt": "latest"
   },
   "scripts": {
