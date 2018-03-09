@@ -5,7 +5,8 @@
   "main": "index.js",
   "dependencies": {
     "bootstrap-vue": "^2.0.0-rc.2",
-    "nuxt": "latest"
+    "nuxt": "latest",
+    "sweetalert": "^2.1.0"
   },
   "scripts": {
     "dev": "nuxt",

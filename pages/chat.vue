@@ -1,6 +1,5 @@
 <style>
 	body{
-		background-color: #303030;
 	}
 
 	#botBar{
@@ -101,7 +100,7 @@
 
 	    <div id="botBar">
 	    	<div class="botIcon" id="deleteAllIcon">
-	    		<img src="deleteAllButton.png">
+	    		<img v-on:click="confirmDelete()" src="deleteAllButton.png">
 	    	</div>
 	    	<div class="botIcon" id="mapIcon">
 	    		<nuxt-link to="/"><img src="mapButton.png"></nuxt-link>
@@ -121,9 +120,32 @@
 
 
 <script>
+import swal from 'sweetalert';
+
+
 export default {
   head: {
     title: 'Home page'
+  },
+  methods: {
+  	confirmDelete: function(){
+  		swal({
+		  title: "Are you sure?",
+		  text: "Once deleted, you will not be able to recover this anything of this burglary-project!",
+		  icon: "warning",
+		  buttons: true,
+		  dangerMode: true,
+		})
+		.then((willDelete) => {
+		  if (willDelete) {
+		    swal("Poof! Your whole project has been deleted!", {
+		      icon: "success",
+		    });
+		  } else {
+		    swal("Your project is not deleted, you can continue!");
+		  }
+		});
+  	}
   }
 }
 </script>

@@ -56,7 +56,7 @@
 
     <div id="botBar">
     	<div class="botIcon" id="deleteAllIcon">
-    		<img src="deleteAllButton.png">
+    		<img v-on:click="confirmDelete()" src="deleteAllButton.png">
     	</div>
     	<div class="botIcon" id="mapIcon">
     		<img src="mapButtonActive.png">
