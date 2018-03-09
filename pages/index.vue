@@ -31,16 +31,16 @@
 
     <div id="botBar">
     	<div class="botIcon" id="deleteAllIcon">
-    		<img src="/deleteAllButton.png">
+    		<img src="deleteAllButton.png">
     	</div>
     	<div class="botIcon" id="mapIcon">
-    		<img src="/mapButton.png">
+    		<img src="mapButton.png">
     	</div>
     	<div class="botIcon" id="addPersonIcon">
-			<img src="/addPersonButton.png">
+			<img src="addPersonButton.png">
     	</div>
     	<div class="botIcon" id="chatIcon">
-    		<img src="/chatButton.png">
+    		<img src="chatButton.png">
     	</div>
     </div>
   </div>
