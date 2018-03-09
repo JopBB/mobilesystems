@@ -1,5 +1,7 @@
 <style>
-	
+	body{
+		background-color: #303030;
+	}
 	#botBar{
 		width:100%;
 		height:8%;

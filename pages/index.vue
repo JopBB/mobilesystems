@@ -1,7 +1,5 @@
 <style>
 	body{
-		background-image: url('/mapBackground.png');
-		background-size: 100%;
 	}
 
 	#botBar{
@@ -30,7 +28,7 @@
 		height:15%;
 		width: 100%;
 		position: absolute;
-		bottom: 8%;
+		bottom: 18%;
 	}
 
 	.actionButton{
@@ -40,11 +38,21 @@
 		height: 100%;
 	}
 
+	#maps iframe{
+		width:100%;
+		position: absolute;
+		height:100%;
+		bottom:8%;
+	}
+
 </style>
 
 
 <template>
   <div>
+  	<div id="maps">
+  		<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d4900.067924077857!2d5.124685750667434!3d52.115510841871725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2snl!4v1520606730254" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+  	</div>
   	<div id="actionButtons">
   		<div class="actionButton">
   			<img src="dangerButton.png">
