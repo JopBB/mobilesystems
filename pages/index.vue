@@ -54,9 +54,14 @@
 		margin: -10% 0 0 -5%;
 	}
 
-	.amountOfPeople{
+	.amountOfParticipants{
 		position: absolute;
 		top:0;
+		height:6%;
+	}
+
+	.amountOfParticipants img{
+		height:100%;
 	}
 </style>
 
@@ -67,9 +72,9 @@
   		<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d4900.067924077857!2d5.124685750667434!3d52.115510841871725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2snl!4v1520606730254" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
   	</div>
 
-  	<div class="amountOfPeople">
-  		<span>Watchers: {{participants.watcherAmount}}</span><br />
-  		<span>Burglars: {{participants.burglarAmount}}</span>
+  	<div class="amountOfParticipants">
+  		<img src="watcherIcon.png"><span>: {{participants.watcherAmount}}</span><br />
+  		<img src="burglarIcon.png"><span>: {{participants.burglarAmount}}</span>
   	</div>
 
   	<div class="locationPointer">

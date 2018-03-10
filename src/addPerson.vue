@@ -33,8 +33,9 @@
 		  }
 		]
   		var result = await swal.queue(steps);
-
+  			swal.resetDefaults()
 		  if (result.value) {
+
 		  	this.updateParticipants(result.value[0]);
 		    swal({
 		      title: 'All done!',
