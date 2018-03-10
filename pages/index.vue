@@ -78,11 +78,11 @@
   	</div>
 
   	<div class="locationPointer">
-  		<img v-if="placeDangerLocation" src="DangerLocation.png">
+  		<img v-if="placeDangerLocation" src="dangerLocation.png">
   	</div>
   	
   	<div class="locationPointer">
-  		<img v-if="placeCarLocation"  src="CarLocation.png">
+  		<img v-if="placeCarLocation"  src="carLocation.png">
   	</div>
   	
   	<div id="actionButtons">
@@ -160,6 +160,7 @@ export default {
   			showCancelButton: true,
   		}).then((result) => {
 		  if (result.value) {
+		  	this.switchCarLocation();
 		    swal(
 		      'Done!',
 		      'The escape car location has been set!.',
@@ -175,6 +176,7 @@ export default {
   			showCancelButton: true,
   		}).then((result) => {
 		  if (result.value) {
+  			this.switchDangerLocation();
 		    swal(
 		      'Done!',
 		      'The danger point has been set, now get to the car-rendez-vous point as quick as possible!',

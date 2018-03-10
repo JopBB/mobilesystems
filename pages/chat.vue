@@ -71,7 +71,7 @@
 				<div class="messageImageWrapper">
 					<img src="silence.png">
 					<p class="messageText">Be silent please!</p>
-					<img src="send.png">
+					<img @click="sendMessage('silence')" src="send.png">
 				</div>
 			</div>
 		</div>
@@ -81,7 +81,7 @@
 				<div class="messageImageWrapper">
 					<img src="warning.png">
 					<p class="messageText">Careful! Get out A.S.A.P.!</p>
-					<img src="send.png">
+					<img @click="sendMessage('warning')" src="send.png">
 				</div>
 			</div>
 		</div>
@@ -91,7 +91,7 @@
 				<div class="messageImageWrapper">
 					<img src="silence.png">
 					<p class="messageText">Be silent please!</p>
-					<img src="send.png">
+					<img @click="sendMessage('silence')" src="send.png">
 				</div>
 			</div>
 		</div>
@@ -129,6 +129,27 @@ export default {
   },
   head: {
     title: 'Home page'
+  },
+  methods:{
+  	sendMessage(messageType){
+  		swal({
+		  title: 'Send message',
+		  text: "Are you sure you want to send a " + messageType + " message?",
+		  type: 'info',
+		  showCancelButton: true,
+		  confirmButtonColor: '#3085d6',
+		  cancelButtonColor: '#d33',
+		  confirmButtonText: 'Send'
+		}).then((result) => {
+		  if (result.value) {
+		    swal(
+		      'Sent!',
+		      'Your message has been sent!',
+		      'success'
+		    )
+		  }
+		})
+  	}
   },
   data() {
   	return {
