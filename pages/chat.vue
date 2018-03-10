@@ -99,15 +99,11 @@
 
 
 	    <div id="botBar">
-	    	<div class="botIcon" id="deleteAllIcon">
-	    		<img v-on:click="confirmDelete()" src="deleteAllButton.png">
-	    	</div>
+	    	<deleteAll @click="deleteAll.confirmDelete()"></deleteAll>
 	    	<div class="botIcon" id="mapIcon">
 	    		<nuxt-link to="/"><img src="mapButton.png"></nuxt-link>
 	    	</div>
-	    	<div class="botIcon" id="addPersonIcon">
-				<img src="addPersonButton.png">
-	    	</div>
+			<addPerson @addBurglar="participants.addBurglar()" @addWatcher="participants.addWatcher()"></addPerson>
 	    	<div class="botIcon" id="chatIcon">
 	    		<img src="chatButtonActive.png">
 	    	</div>
@@ -121,31 +117,24 @@
 
 <script>
 import swal from 'sweetalert2';
+import addPerson from '~/src/addPerson.vue'
+import deleteAll from '~/src/deleteAll.vue'
+import participants from '~/src/participants.js'
 
 
 export default {
+  components: {
+  	addPerson,
+  	deleteAll
+  },
   head: {
     title: 'Home page'
   },
-  methods: {
-  	confirmDelete: function(){
-  		swal({
-		  title: 'Are you sure?',
-		  text: "You won't be able to revert this!",
-		  type: 'warning',
-		  showCancelButton: true,
-		  confirmButtonColor: '#3085d6',
-		  cancelButtonColor: '#d33',
-		  confirmButtonText: 'Yes, delete it!'
-		}).then((result) => {
-		  if (result.value) {
-		    swal(
-		      'Deleted!',
-		      'Your file has been deleted.',
-		      'success'
-		    )
-		  }
-		})
+  data() {
+  	return {
+  		placeDangerLocation: false,
+  		placeCarLocation: false,
+  		participants: participants
   	}
   }
 }

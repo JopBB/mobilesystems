@@ -54,6 +54,10 @@
 		margin: -10% 0 0 -5%;
 	}
 
+	.amountOfPeople{
+		position: absolute;
+		top:0;
+	}
 </style>
 
 
@@ -61,6 +65,11 @@
   <div>
   	<div id="maps">
   		<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d4900.067924077857!2d5.124685750667434!3d52.115510841871725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2snl!4v1520606730254" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+  	</div>
+
+  	<div class="amountOfPeople">
+  		<span>Watchers: {{participants.watcherAmount}}</span><br />
+  		<span>Burglars: {{participants.burglarAmount}}</span>
   	</div>
 
   	<div class="locationPointer">
@@ -90,15 +99,11 @@
   	</div>
 
     <div id="botBar">
-    	<div class="botIcon" id="deleteAllIcon">
-    		<img v-on:click="confirmDelete()" src="deleteAllButton.png">
-    	</div>
+    	<deleteAll @click="deleteAll.confirmDelete()"></deleteAll>
     	<div class="botIcon" id="mapIcon">
     		<img src="mapButtonActive.png">
     	</div>
-    	<div class="botIcon" id="addPersonIcon">
-			<img src="addPersonButton.png">
-    	</div>
+    	<addPerson @addBurglar="participants.addBurglar()" @addWatcher="participants.addWatcher()"></addPerson>
     	<div class="botIcon" id="chatIcon">
     		<nuxt-link to="/chat"><img src="chatButton.png"></nuxt-link>
     	</div>
@@ -111,38 +116,26 @@
 
 <script>
 import swal from 'sweetalert2';
-
+import addPerson from '~/src/addPerson.vue'
+import deleteAll from '~/src/deleteAll.vue'
+import participants from '~/src/participants.js'
 
 export default {
+  components: {
+  	addPerson,
+  	deleteAll
+  },
   head: {
     title: 'Home page'
   },
   data() {
   	return {
   		placeDangerLocation: false,
-  		placeCarLocation: false
+  		placeCarLocation: false,
+  		participants: participants,
   	}
   },
   methods: {
-  	confirmDelete(){
-  		swal({
-		  title: 'Are you sure you want to delete this project?',
-		  text: "You won't be able to revert this!",
-		  type: 'warning',
-		  showCancelButton: true,
-		  confirmButtonColor: '#3085d6',
-		  cancelButtonColor: '#d33',
-		  confirmButtonText: 'DELETE'
-		}).then((result) => {
-		  if (result.value) {
-		    swal(
-		      'Deleted!',
-		      'Your project has been deleted.',
-		      'success'
-		    )
-		  }
-		})
-  	},
   	switchCarLocation(){
   		this.placeCarLocation = !this.placeCarLocation;
   		if(this.placeDangerLocation){
@@ -184,7 +177,7 @@ export default {
 		    )
 		  }
 		})
-  	}	
+  	}
   }
 }
 </script>
