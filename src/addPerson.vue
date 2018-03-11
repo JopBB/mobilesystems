@@ -24,7 +24,10 @@
 		  	inputOptions:{
 		  		watcher: 'Watcher',
 		  		burglar: 'Burglar'
-		  	}
+		  	},
+		  	inputValidator: (value) => {
+    			return !value && 'You need to choose something!'
+  			}
 		  },
 		  {
 		  	title:'Add Person',
