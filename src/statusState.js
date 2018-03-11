@@ -10,7 +10,6 @@ export default{
 				  text: "There is danger. Get our A.S.A.P.",
 				  type: 'warning',
 				  confirmButtonColor: '#3085d6',
-				  cancelButtonColor: '#d33',
 				  confirmButtonText: 'OK'
 				}).then((result) => {
 					that.isWarning=true;

@@ -165,7 +165,7 @@ export default {
   	},
   	 confirmDangerLocation(){
   		swal({
-  			title: 'Are you sure you want to set the danger-point car to this location?',
+  			title: 'Are you sure you want to set the danger-point to this location?',
   			type: 'info',
   			showCancelButton: true,
   		}).then((result) => {
