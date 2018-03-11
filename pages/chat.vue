@@ -61,6 +61,26 @@
 		text-align: center;
 		margin: auto;
 	}
+
+	#recievedMessages{
+		position: absolute;
+		bottom:8%;
+		width:100%;
+		height:15%;
+		text-align: center;
+		background-color: #424242;
+	}
+
+	#recievedMessages h4{
+		color:#BBB;
+	}
+
+	#recievedMessages img{
+		height:50%;
+		margin: auto;
+		display: block;
+
+	}
 </style>
 
 
@@ -74,9 +94,7 @@
 					<img @click="sendMessage('silence')" src="send.png">
 				</div>
 			</div>
-		</div>
 
-		<div id="chatMessages">
 			<div class="message">
 				<div class="messageImageWrapper">
 					<img src="warning.png">
@@ -84,9 +102,7 @@
 					<img @click="sendMessage('warning')" src="send.png">
 				</div>
 			</div>
-		</div>
 
-		<div id="chatMessages">
 			<div class="message">
 				<div class="messageImageWrapper">
 					<img src="silence.png">
@@ -96,7 +112,10 @@
 			</div>
 		</div>
 
-
+		<div id="recievedMessages">
+			<h4>Inbox</h4>
+			<img src="carIcon.png">
+		</div>
 
 	    <div id="botBar">
 	    	<deleteAll @click="deleteAll.confirmDelete()"></deleteAll>
