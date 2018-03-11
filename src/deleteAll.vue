@@ -6,6 +6,7 @@
 
 <script>
 	import swal from 'sweetalert2';
+	import participantState from '~/src/participantState.js'
 	export default{
 
 		methods:{
@@ -20,6 +21,8 @@
 				  confirmButtonText: 'DELETE'
 				}).then((result) => {
 				  if (result.value) {
+				  	participantState.watcherAmount=1;
+				  	participantState.burglarAmount=1;
 				    swal(
 				      'Deleted!',
 				      'Your project has been deleted.',

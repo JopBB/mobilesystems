@@ -27,6 +27,7 @@
 		flex-direction: column;
 		justify-content: flex-start;
 		align-items: center;
+		margin-top:100px;
 
 	}
 
@@ -70,22 +71,14 @@
 		text-align: center;
 		background-color: #424242;
 	}
-
-	#recievedMessages h4{
-		color:#BBB;
-	}
-
-	#recievedMessages img{
-		height:50%;
-		margin: auto;
-		display: block;
-
-	}
 </style>
 
 
 <template>
 	<div>
+		<participants></participants>
+		<status></status>
+
 		<div id="chatMessages">
 			<div class="message">
 				<div class="messageImageWrapper">
@@ -112,17 +105,12 @@
 			</div>
 		</div>
 
-		<div id="recievedMessages">
-			<h4>Inbox</h4>
-			<img src="carIcon.png">
-		</div>
-
 	    <div id="botBar">
 	    	<deleteAll @click="deleteAll.confirmDelete()"></deleteAll>
 	    	<div class="botIcon" id="mapIcon">
 	    		<nuxt-link to="/"><img src="mapButton.png"></nuxt-link>
 	    	</div>
-			<addPerson @addBurglar="participants.addBurglar()" @addWatcher="participants.addWatcher()"></addPerson>
+			<addPerson @addBurglar="participantState.addBurglar()" @addWatcher="participantState.addWatcher()"></addPerson>
 	    	<div class="botIcon" id="chatIcon">
 	    		<img src="chatButtonActive.png">
 	    	</div>
@@ -138,13 +126,19 @@
 import swal from 'sweetalert2';
 import addPerson from '~/src/addPerson.vue'
 import deleteAll from '~/src/deleteAll.vue'
-import participants from '~/src/participants.js'
+import status from '~/src/status.vue'
+import statusState from '~/src/statusState.js'
+import participants from '~/src/participants.vue'
+import participantState from '~/src/participantState.js'
+
 
 
 export default {
   components: {
   	addPerson,
-  	deleteAll
+  	deleteAll,
+  	status,
+  	participants
   },
   head: {
     title: 'Home page'
@@ -161,6 +155,7 @@ export default {
 		  confirmButtonText: 'Send'
 		}).then((result) => {
 		  if (result.value) {
+  	  		statusState.warningMessage();
 		    swal(
 		      'Sent!',
 		      'Your message has been sent!',
@@ -174,7 +169,10 @@ export default {
   	return {
   		placeDangerLocation: false,
   		placeCarLocation: false,
-  		participants: participants
+  		participantState: participantState,
+  		statusState:statusState,
+  		sentMessage: false,
+
   	}
   }
 }
