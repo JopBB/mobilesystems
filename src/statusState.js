@@ -15,7 +15,7 @@ export default{
 					that.isWarning=true;
 				})
 			}
-			,5000)
+			,15000)
 		}			
 	}
 }

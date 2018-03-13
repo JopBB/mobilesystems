@@ -96,13 +96,6 @@
 				</div>
 			</div>
 
-			<div class="message">
-				<div class="messageImageWrapper">
-					<img src="silence.png">
-					<p class="messageText">Be silent please!</p>
-					<img @click="sendMessage('silence')" src="send.png">
-				</div>
-			</div>
 		</div>
 
 	    <div id="botBar">
