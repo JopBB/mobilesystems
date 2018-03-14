@@ -1,6 +1,6 @@
 <template>
 	<div class="botIcon" id="deleteAllIcon">
-		<img v-on:click="confirmDelete()" src="deleteAllButton.png">
+		<img v-on:click="confirmDelete()" src="recycleBin.png">
 	</div>
 </template>
 

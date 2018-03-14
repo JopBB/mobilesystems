@@ -125,7 +125,16 @@ export default {
   	participants
   },
   head: {
-    title: 'Home page'
+    title: 'Home page',
+    script: [
+       { src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js' },
+       { src: 'https://code.jquery.com/ui/1.12.1/jquery-ui.js'},
+       { src: 'jquery.ui.touch-punch.min.js'}
+
+    ],
+    link: [
+       { rel:'stylesheet', href: '//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"'}
+    ]
   },
   data() {
   	return {
@@ -136,12 +145,14 @@ export default {
   },
   methods: {
   	switchCarLocation(){
+  		$(".locationPointer").draggable();
   		this.placeCarLocation = !this.placeCarLocation;
   		if(this.placeDangerLocation){
   			this.placeDangerLocation = false;
   		}
   	},
   	switchDangerLocation(){
+  		$(".locationPointer").draggable();
   		this.placeDangerLocation = !this.placeDangerLocation;
   		if(this.placeCarLocation){
   			this.placeCarLocation = false;
@@ -149,7 +160,7 @@ export default {
   	},
   	confirmCarLocation(){
   		swal({
-  			title: 'Are you sure you want to set the escape car to this location?',
+  			title: 'Are you sure you want to set the pick-up point? to this location?',
   			type: 'info',
   			showCancelButton: true,
   		}).then((result) => {
@@ -165,7 +176,7 @@ export default {
   	},
   	 confirmDangerLocation(){
   		swal({
-  			title: 'Are you sure you want to set the danger-point to this location?',
+  			title: 'Are you sure you want to set the danger point to this location?',
   			type: 'info',
   			showCancelButton: true,
   		}).then((result) => {
