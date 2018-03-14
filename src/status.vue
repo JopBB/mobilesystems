@@ -19,7 +19,7 @@
 		<div class="status">
 			<span>Status:</span><br />
 			<img v-if="!statusState.isWarning" src="thumbsUp.png">
-			<img v-if="statusState.isWarning" src="warning.png">
+			<img v-if="statusState.isWarning" src="getOut.png">
   		</div>
 	</div>
 </template>

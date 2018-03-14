@@ -90,7 +90,7 @@
 
 			<div class="message">
 				<div class="messageImageWrapper">
-					<img src="warning.png">
+					<img src="getOutWhite.png">
 					<p class="messageText">Careful! Get out A.S.A.P.!</p>
 					<img @click="sendMessage('warning')" src="send.png">
 				</div>
