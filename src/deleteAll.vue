@@ -27,7 +27,11 @@
 				      'Deleted!',
 				      'Your project has been deleted.',
 				      'success'
-				    )
+				    ).then((result => {
+				    	if(result.value) {
+				    		window.location = "about:blank"
+				    	}
+				    }))
 				  }
 				})
   			}
